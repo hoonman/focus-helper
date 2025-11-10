@@ -1,0 +1,9 @@
+{
+    "name": "Focus Helper",
+    "description": "This chrome extension will allow users to select certain URLs that they would like blocked so that they are able to have a meaningful deep work session.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "src/focus-mode-manager/focus-mode-manager.html"
+    }
+}
