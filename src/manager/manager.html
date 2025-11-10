@@ -1,12 +1,23 @@
 <html lang="en">
     <body>
-        <h3>Focus Helper</h3>
+        <h2>Focus Helper</h2>
         <div>
             <label class="switch" aria-label="Toggle focus mode">
                 <input id="toggle" type="checkbox">
                 <span class="slider"></span>
             </label>
             <div id="status">OFF</div>
+        </div>
+
+        <div id="links-area">
+            <div id="links-list" aria-live="polite">
+                <input type="text">
+                <button>add</button>
+            </div>
+
+            <div id="controls">
+                <button id="add-another">Add another item</button>
+            </div>
         </div>
         <script src="popup.js"></script>
     </body>

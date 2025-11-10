@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+const STORAGE_KEY = 'blockedLinks';
+
+function initToggle() {
     const toggle = document.getElementById('toggle'); // toggle is a checkbox
     const status = document.getElementById('status'); // status is a div
 
@@ -11,4 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
             status.textContent = 'OFF';
         }
     });
+}
+
+function saveLinks(links) {
+    chrome.storage.local.set({ [STORAGE_KEY]: links }, () => {
+        console.log('saved links', links);
+    })
+}
+
+function loadLinks(callback) {
+    chrome.storage.local.get([STORAGE_KEY], (res) => {
+        const links = Array.isArray(res[STORAGE_KEY]) ? res[STORAGE_KEY] : [];
+        callback(links);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initToggle();
 });
+
